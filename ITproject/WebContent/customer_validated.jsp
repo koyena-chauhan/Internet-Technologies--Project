@@ -1,24 +1,39 @@
+<head>
+    <title>Validate Student </title>
+    <link rel="stylesheet" href="indexStyle.css">
+</head>
+<jsp:useBean id="customer" scope="request" class="bean.customerBean">
+    <jsp:setProperty name="customer" property="firstName" value="${param.firstName}"/>
+    <jsp:setProperty name="customer" property="lastName" value="${param.lastName}"/>
+    <jsp:setProperty name="customer" property="emailId" value="${param.emailId}"/>
+    <jsp:setProperty name="customer" property="gender" value="${param.gender}"/>
 
-<jsp:useBean id="customerBean" scope="session" class="bean.customerBean"/>
-    		<jsp:setProperty name="customerBean" property="firstName" value="${param.firstName}" />
-    		<jsp:setProperty name="customerBean" property="lastName" value="${param.lastName}"/>
-    		<jsp:setProperty name="customerBean" property="emailId" value="${param.emailId}"/>
-    		<jsp:setProperty name="customerBean" property="ID" value="${param.ID}"/>
-	<p>Customer First Name: 
-		<jsp:getProperty name = "customerBean" property = "firstName"/>
-    </p>
+</jsp:useBean>
+<div>
+    <p>First Name: 
+            <jsp:getProperty name = "customer" property = "firstName"/>
+          </p>
           
-    <p>Customer Last Name: 
-    	<jsp:getProperty name = "customerBean" property = "lastName"/>
-    </p>
-    
-    <p>Customer ID number: 
-    	<jsp:getProperty name = "customerBean" property = "ID"/>
-    </p>
-    
-    <p>Customer Email: 
-    	<jsp:getProperty name = "customerBean" property = "emailId"/>
-    </p>
-    
+          <p>Last Name: 
+            <jsp:getProperty name = "customer" property = "lastName"/>
+          </p>
+
+          <p>Email: 
+            <jsp:getProperty name = "customer" property = "emailId"/>
+          </p>
+		
+          <p>Gender: 
+            <jsp:getProperty name = "customer" property = "gender"/>
+          </p>
+          <br/><br/>
+    <b>Student Validated!</b>
     <br/><br/>
-    <b>Customer Validated!</b>
+    <form action="buyproduct.jsp" method="get">
+    	<button>Buy Products</button>
+    </form>
+    
+    <form action="first.jsp" method="get">
+    	<button>Back to Login page</button>
+    </form>
+     
+  </div>      

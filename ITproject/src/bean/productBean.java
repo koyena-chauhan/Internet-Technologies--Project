@@ -4,22 +4,20 @@ public class productBean implements Serializable{
     
     String productName;
     String productId;
-    String companyName;
-    String day;
-    String month;
-    String year;
-    String emailId;
+    String productType;
+    String manufactureDate;
+    String expiryDate;
 
     public productBean(){
 
     }
 
-    public void setemailId(String emailId){
-        this.emailId = emailId;
+    public void setexpiryDate(String expiryDate){
+        this.expiryDate = expiryDate;
     }
 
-    public String getemailId(){
-        return emailId;
+    public String getexpiryDate(){
+        return expiryDate;
     }
     
     public void setproductName(String productName){
@@ -38,35 +36,20 @@ public class productBean implements Serializable{
         return productId;
     }
 
-    public void setcompanyName(String companyName){
-        this.companyName = companyName;
+    public void setmanufactureDate(String manufactureDate){
+        this.manufactureDate = manufactureDate;
     }
 
-    public String getcompanyName(){
-        return companyName;
+    public String getmanufactureDate(){
+        return manufactureDate;
     }
 
-    public void setday(String day){
-        this.day = day;
+    public void setproductType(String productType){
+        this.productType = productType;
     }
 
-    public String getday(){
-        return day;
+    public String getproductType(){
+        return productType;
     }
     
-    public void setmonth(String month){
-        this.month = month;
-    }
-
-    public String getmonth(){
-        return month;
-    }
-    
-    public void setyear(String year){
-        this.year = year;
-    }
-
-    public String getyear(){
-        return year;
-    }
 }

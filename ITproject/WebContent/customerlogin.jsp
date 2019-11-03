@@ -1,29 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Customer Login</title>
+    <title>Student</title>
+    <link rel="stylesheet" href="indexStyle.css">
+
 </head>
+
 <body>
-	<p>Kindly enter the following details: </p>
-	<br><br>
-	
-	<form action="customer_validation.jsp">
-		First Name: <input type="text" name="firstName" required/>
-		<br/><br/>
-	
-		Last Name: <input type="text" name="lastName"/>
-		<br/><br/>
-	
-		ID number: <input placeholder="4 digits" type="number" name="ID" required/>
-		<br/><br/>
-				
-		Email: <input placeholder="abc@example.com" type="email" name="emailId" required/>
-		
-		<br/><br/>
-		<button type="submit">Validate details</button>
-	</form>
+<div>
+    <form method="get" action="customer_validation.jsp">
+        <h3 style="color:blue">
+              Customer Details  
+        </h3>
+         Customer First Name: <input type="text" name="firstName"/> <br>
+
+         Customer Last Name: <input type="text" name="lastName"/> <br>
+
+         Customer Email Id: <input type="email" name="emailId"/> <br>
+
+         Gender: <input type="radio" name="gender" value="Male">Male    
+                 <input type="radio" name="gender" value="Female">Female
+                 <br>
+ 
+         <input type="submit">
+    </form>
+    </div>
+
 </body>
+
 </html>

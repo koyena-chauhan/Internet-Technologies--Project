@@ -1,0 +1,12 @@
+.container>h3 {
+    font-family: 'Courier New', Courier, monospace;
+    color: darkorchid;
+}
+
+div {
+    align-content: center;
+}
+
+input[type=text] {
+    padding-top: 20px;
+}

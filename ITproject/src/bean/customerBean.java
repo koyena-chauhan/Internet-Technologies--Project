@@ -5,18 +5,18 @@ public class customerBean implements Serializable{
     String firstName;
     String lastName;
     String emailId;
-    String ID;
+    String gender;
 
     public customerBean(){
 
     }
 
-    public void setID(String ID){
-        this.ID = ID;
+    public void setgender(String gender){
+        this.gender = gender;
     }
     
-    public String getID(){
-        return ID;
+    public String getgender(){
+        return gender;
     }
     
     public void setFirstName(String firstName){

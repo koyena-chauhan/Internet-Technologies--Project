@@ -6,17 +6,17 @@ public class studentBean implements Serializable{
     String lastName;
     String emailId;
     String gender;
-    String rollNo;
+    String dob;
 
     public studentBean(){
     }
 
-    public void setRollNo(String rollNo){
-        this.rollNo = rollNo;
+    public void setdob(String dob){
+        this.dob = dob;
     }
     
-    public String getRollNo(){
-        return rollNo;
+    public String getdob(){
+        return dob;
     }
     
     public void setFirstName(String firstName){

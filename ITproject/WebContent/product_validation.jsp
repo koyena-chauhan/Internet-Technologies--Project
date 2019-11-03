@@ -5,72 +5,65 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Product validation</title>
+ <link rel="stylesheet" href="indexStyle.css">
 </head>
 <body>
+ <form action="product_validation.jsp" method="get">
+	<%  String productName = request.getParameter("productName");
+        String productId = request.getParameter("productId");
+        String productType = request.getParameter("productType");
+        String manufactureDate = request.getParameter("manufactureDate");
+        String expiryDate = request.getParameter("expiryDate");
+        %>
 
-	<% int flag=0; %>
-	<% 	String productID = request.getParameter("productId");
-		String productName = request.getParameter("productName");
-		String companyName = request.getParameter("companyName");
-		String day = request.getParameter("day");
-		String month = request.getParameter("month");
-		
-		int dayInt = Integer.parseInt(day);
-		int monthInt = Integer.parseInt(month);
-	%>
-	
-	<% 
-		int pIDLength = productID.length();
-		int pIDInt = Integer.parseInt(productID);
-		
-		if(pIDLength != 4 || pIDInt <= 0)
-		{
-			out.println("Invalid Product ID" + "<br>");
-			flag=1;
-		}
-	%>
-	
-	<%
-		int firstLen = productName.length();
-		int lastLen = companyName.length();
-		
-		for (int i = 0; i <lastLen; i++) {
-	    	if ((Character.isLetter(companyName.charAt(i)) == false)) 
-	    	{
-	            out.println("Invalid Company Name" + "<br>");
-	            flag=1;
-	            break;
-	    	}
-	    }
-		for (int i = 0; i <firstLen; i++) {
-	    	if ((Character.isLetter(productName.charAt(i)) == false)) 
-	    	{
-	            out.println("Invalid Product Name" + "<br>");
-	            flag=1;
-	            break;
-	    	}
-	    }
-		
-		if(dayInt <=0 || monthInt<=0 || dayInt>31 || monthInt>12)
-		{
-			out.println("Invalid Date of Expiry");
-			flag=1;
-		}
-		
-	%>
-	
-	<%
-	if(flag == 0)
-	{
-	%>
-		<jsp:forward page="product_validated.jsp" />
-	<%
-	}
-	else if(flag == 1)
-		{
-		out.println("<br><br>"+ "VALIDATION FAILED");
-		}
-	%>
+    <div>
+        <h3>
+              product Details  
+        </h3>
+         Product Name: <input type="text" name="productName"/> <br>
+         <% if(productName.equals("")){%>
+             <font color="red" size=2px ">This can't be empty</font> 
+            <br>
+         <%}%>
 
+         Product Id: <input type="text" name="productId"/> <br>
+         <% if(productId.equals("")){%>
+             <font color="red" size=2px>This can't be empty</font> 
+            <br>
+         <%}%>
+
+         Product Type: <input type="text" name="productType"/> <br>
+         <% if(productType.equals("")){
+             %>
+             <font color="red" size=2px>This can't be empty</font>
+             <br>
+         <%}%>
+
+         Date of Manufacture: <input placeholder="dd-mm-yyyy" type="text" name="manufactureDate"/>(Format: date-month-date) <br>
+
+         <% if(manufactureDate.equals("")){
+             %>
+                <font color="red" size=2px>This can't be empty</font>
+                <br>
+
+        <% }%>
+
+        Date of Expiry: <input placeholder="dd-mm-yyyy" type="text" name="expiryDate"/>(Format: date-month-date) <br>
+
+         <% if(expiryDate.equals("")){
+             %>
+                <font color="red" size=2px>This can't be empty</font>
+                <br>
+
+        <% }
+         else{
+             %>
+             <jsp:forward page="product_validated.jsp"/>
+         <%}%>
+
+         <input type="submit">  
+   
+    </div>
+</form>
 </body>
 </html>

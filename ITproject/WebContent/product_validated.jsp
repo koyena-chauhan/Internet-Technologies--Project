@@ -1,31 +1,43 @@
+<head>
+    <title>Validate Student </title>
+    <link rel="stylesheet" href="indexStyle.css">
+</head>
+<jsp:useBean id="product" scope="request" class="bean.productBean">
+    <jsp:setProperty name="product" property="productName" value="${param.productName}"/>
+    <jsp:setProperty name="product" property="productId" value="${param.productId}"/>
+    <jsp:setProperty name="product" property="productType" value="${param.productType}"/>
+    <jsp:setProperty name="product" property="manufactureDate" value="${param.manufactureDate}"/>
+    <jsp:setProperty name="product" property="expiryDate" value="${param.expiryDate}"/>
 
-<jsp:useBean id="productBean" scope="session" class="bean.productBean"/>
-    		<jsp:setProperty name="productBean" property="productName" value="${param.productName}" />
-    		<jsp:setProperty name="productBean" property="companyName" value="${param.companyName}"/>
-    		<jsp:setProperty name="productBean" property="emailId" value="${param.emailId}"/>
-    		<jsp:setProperty name="productBean" property="day" value="${param.day}"/>
-    		<jsp:setProperty name="productBean" property="month" value="${param.month}"/>
-    		<jsp:setProperty name="productBean" property="year" value="${param.year}"/>
-    		<jsp:setProperty name="productBean" property="productId" value="${param.productId}"/>
-	<p>Product Name: 
-		<jsp:getProperty name = "productBean" property = "productName"/>
-    </p>
+</jsp:useBean>
+<div>
+    <p>Product Name: 
+            <jsp:getProperty name = "product" property = "productName"/>
+          </p>
           
-    <p>Company Name: 
-    	<jsp:getProperty name = "productBean" property = "companyName"/>
-    </p>
-    
-    <p>Product ID: 
-    	<jsp:getProperty name = "productBean" property = "productId"/>
-    </p>
+          <p>Product Id: 
+            <jsp:getProperty name = "product" property = "productId"/>
+          </p>
+
+          <p>Product Type: 
+            <jsp:getProperty name = "product" property = "productType"/>
+          </p>
+		
+          <p>Product Date of manufacture: 
+            <jsp:getProperty name = "product" property = "manufactureDate"/>
+          </p>
           
-    <p>Date of Expiration: 
-    	<jsp:getProperty name = "productBean" property = "day"/>/<jsp:getProperty name = "productBean" property = "month"/>/<jsp:getProperty name = "productBean" property = "year"/>
-    </p>
-    
-    <p>Email ID: 
-    	<jsp:getProperty name = "productBean" property = "emailId"/>
-    </p>
-    
+          <p>Product Date of expiry: 
+            <jsp:getProperty name = "product" property = "expiryDate"/>
+          </p>
+          <br/><br/>
+    <b>Student Validated!</b>
     <br/><br/>
-    <b>Product Validated!</b>
+    <form action="buyproduct.jsp" method="get">
+    	<button>Buy Products</button>
+    </form>
+    
+    <form action="first.jsp" method="get">
+    	<button>Back to Login page</button>
+    </form>
+          </div>
